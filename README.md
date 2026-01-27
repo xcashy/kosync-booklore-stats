@@ -43,7 +43,7 @@ services:
         - "5000:5000"
       environment:
         TZ: ${TZ}
-        BOOKLORE_KOSYNC_URL: http://booklore:${BOOKLORE_PORT}/api/kosync
+        BOOKLORE_KOSYNC_URL: http://booklore:${BOOKLORE_PORT}/api/koreader
         SESSION_TIMEOUT_MINUTES: 10
         SESSION_MIN_DURATION_SECONDS: 10
         DB_HOST: mariadb
@@ -109,11 +109,21 @@ services:
       retries: 10
 ```
 
+## Usage
+
+In your reading app (KOReader, Readest, etc.), configure the KoSync server URL to point to the proxy instead of Booklore directly:
+
+```
+http://<proxy-host>:5000
+```
+
+Example: If your proxy runs at `192.168.1.100:5000`, use that as the KoSync server URL instead of `http://192.168.1.100:6060/api/koreader`.
+
 ## Configuration
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `BOOKLORE_KOSYNC_URL` | Booklore KOReader API Path | `http://booklore:6060/api/kosync` |
+| `BOOKLORE_KOSYNC_URL` | Booklore KOReader API Path | `http://booklore:6060/api/koreader` |
 | `SESSION_TIMEOUT_MINUTES` | Minutes until inactive session is closed | `10` |
 | `SESSION_MIN_DURATION_SECONDS` | Minimum session duration to be saved | `10` |
 | `LOG_LEVEL` | Logging level (DEBUG, INFO, WARNING, ERROR) | `INFO` |

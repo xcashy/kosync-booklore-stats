@@ -12,7 +12,7 @@ class Config:
     DEBUG = os.getenv('FLASK_DEBUG', 'False') == 'True'
 
     # Booklore KoSync Server
-    BOOKLORE_KOSYNC_URL = os.getenv('BOOKLORE_KOSYNC_URL', 'http://booklore:6060/api/kosync')
+    BOOKLORE_KOSYNC_URL = os.getenv('BOOKLORE_KOSYNC_URL', 'http://booklore:6060/api/koreader')
 
     # Session tracking
     SESSION_TIMEOUT_MINUTES = int(os.getenv('SESSION_TIMEOUT_MINUTES', 10))
