@@ -39,6 +39,7 @@ Example `docker-compose.yml`:
 services:
   kosync-booklore-stats:
       image: xcashy/kosync-booklore-stats:latest
+      container_name: kosync-booklore-stats
       ports:
         - "5000:5000"
       environment:
@@ -126,6 +127,7 @@ Example: If your proxy runs at `192.168.1.100:5000`, use that as the KoSync serv
 | `BOOKLORE_KOSYNC_URL` | Booklore KOReader API Path | `http://booklore:6060/api/koreader` |
 | `SESSION_TIMEOUT_MINUTES` | Minutes until inactive session is closed | `10` |
 | `SESSION_MIN_DURATION_SECONDS` | Minimum session duration to be saved | `10` |
+| `PROGRESS_DECIMAL_PLACES` | Decimal places for progress percentage | `1` |
 | `LOG_LEVEL` | Logging level (DEBUG, INFO, WARNING, ERROR) | `INFO` |
 | `DB_HOST` | Database host | `mariadb` |
 | `DB_PORT` | Database port | `3306` |
